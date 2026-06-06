@@ -1,117 +1,311 @@
-p{
- font-size: 20px;   
+/* ===== BASE ===== */
+* {
+    box-sizing: border-box;
 }
-body{
-    font-family: poppins; 
+
+body {
+    font-family: poppins;
     margin: 0;
     padding: 0;
 }
-li{
+
+p {
+    font-size: 20px;
+}
+
+li {
     list-style: none;
     margin-right: 25px;
-
 }
 
-.menu {
- display: flex;
- justify-content: space-between;
- align-items: center;
-}
-
-.titular {
-    text-align: center;
-    margin-top: 200px;
-
-}
-    ul{
-    display: flex;
-    gap: 20px;
-}
-
-a{
+a {
     text-decoration: none;
     font-size: 14px;
     background: #5cb8ff;
-    padding: 20px 30px 20px 30px;
+    padding: 20px 30px;
     color: white;
 }
-h1{
+
+h1 {
     font-size: 60px;
-    margin:0;
+    margin: 0;
 }
-h2{
+
+h2 {
     font-size: 25px;
-    margin:0;
+    margin: 0;
     margin-bottom: 40px;
 }
-header{
+
+h3 {
+    text-align: center;
+    font-size: 55px;
+    font-weight: normal;
+}
+
+/* ===== CONTENEDOR ===== */
+.contenedor {
+    max-width: 1280px;
+    width: 90%;
+    margin: auto;
+}
+
+/* ===== HEADER ===== */
+header {
     background: url(fondo.jpg);
     background-repeat: no-repeat;
     height: 100vh;
     background-size: cover;
     background-position: center;
+    color: white;
 }
-.contenedor{
-    max-width: 1280px;
-    width: 90%;
-    margin: auto;
+
+/* ===== MENÚ ===== */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 0;
 }
-.foto-perfil{
-    width: 15%;
-    height: 15%;
-    border-radius: 50%; 
-    object-fit: cover;
-    margin-left: 50px;
+
+.marca {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
 }
-/* Arranca sección sobre mi */
-.contenedor-sobre-mi{
+
+ul {
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== BOTÓN HAMBURGUESA ===== */
+.hamburguesa {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.hamburguesa img {
+    width: 30px;
+    filter: brightness(0) invert(1);
+}
+
+/* ===== TITULAR (hero) ===== */
+.titular {
+    text-align: center;
+    margin-top: 200px;
+}
+
+/* ===== SECCIÓN SOBRE MI ===== */
+.contenedor-sobre-mi {
     display: flex;
     justify-content: space-between;
     gap: 50px;
     align-items: center;
 }
-h3{
- text-align: center;
- font-size: 55px;
- font-weight: normal;
+
+.foto-perfil {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
 }
-.contenedor-parrafo-y-boton{
+
+.contenedor-parrafo-y-boton {
     width: 75%;
 }
+
 .contenedor-parrafo-y-boton p {
     font-size: 18px;
 }
+
 .contenedor-parrafo-y-boton a {
     display: inline-block;
     margin-top: 20px;
 }
-.contenedor-servicio{
+
+/* ===== SECCIÓN SERVICIOS ===== */
+.contenedor-servicio {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    gap: 20px;
 }
-.servicio{
-    width: 23%;
+
+.servicio {
+    width: 28%;
     padding: 38px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     border-radius: 10px;
     color: white;
 }
-.violeta{
-background: #5055df;
-}
-.celeste{
-background: #40a8fa;
+
+.violeta {
+    background: #5055df;
 }
 
-.servicio h4{
+.celeste {
+    background: #40a8fa;
+}
+
+.servicio h4 {
     font-size: 30px;
-}
-.servicio img{
-    float: right;
+    margin-top: 0;
 }
 
-.servicio p{
+.servicio img {
+    float: right;
+    max-width: 60px;
+}
+
+.servicio p {
     font-size: 16px;
-    height: 250px;
+}
+
+/* ===== TABLET (≤ 1024px) ===== */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 48px;
+    }
+
+    h3 {
+        font-size: 42px;
+    }
+
+    .servicio {
+        width: 44%;
+    }
+
+    .titular {
+        margin-top: 150px;
+    }
+}
+
+/* ===== MÓVIL (≤ 768px) ===== */
+@media (max-width: 768px) {
+    /* Tipografía */
+    h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    /* Header */
+    header {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .titular {
+        margin-top: 60px;
+        padding: 20px 0 40px;
+    }
+
+    /* Hamburguesa visible */
+    .hamburguesa {
+        display: block;
+    }
+
+    /* Nav oculto por defecto en móvil */
+    nav {
+        display: none;
+        width: 100%;
+        order: 3;
+    }
+
+    nav.activo {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+        background: rgba(0, 0, 0, 0.85);
+        border-radius: 10px;
+        padding: 10px 0;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin-right: 0;
+        padding: 12px 20px;
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+    }
+
+    nav ul li:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Sobre mi */
+    .contenedor-sobre-mi {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .foto-perfil {
+        width: 160px;
+        height: 160px;
+    }
+
+    .contenedor-parrafo-y-boton {
+        width: 100%;
+    }
+
+    .contenedor-parrafo-y-boton a {
+        display: block;
+        text-align: center;
+    }
+
+    /* Servicios */
+    .servicio {
+        width: 100%;
+        padding: 25px;
+    }
+
+    .servicio h4 {
+        font-size: 22px;
+    }
+}
+
+/* ===== MÓVIL PEQUEÑO (≤ 480px) ===== */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    .foto-perfil {
+        width: 130px;
+        height: 130px;
+    }
+
+    a {
+        padding: 14px 20px;
+        font-size: 13px;
+    }
 }
