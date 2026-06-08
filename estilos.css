@@ -44,12 +44,25 @@ h2{
     margin:0;
     margin-bottom: 40px;
 }
+html {
+    scroll-behavior: smooth;
+}
 header{
     background: url(fondo.jpg);
     background-repeat: no-repeat;
     height: 100vh;
     background-size: cover;
     background-position: center;
+    position: relative;
+}
+nav a {
+    background: none;
+    padding: 0;
+    color: black;
+    font-size: 15px;
+}
+nav a:hover {
+    text-decoration: none;
 }
 .contenedor{
     max-width: 1280px;
@@ -127,11 +140,11 @@ span{
     justify-content: space-around;
     text-align: center;
 }
-.contenedor-porque .h4{
+.contenedor-porque h4{
     margin: 0;
     font-size: 20px;
 }
-.contenedor-porque .p{
+.contenedor-porque p{
     font-size: 16px;
     line-height: 28px;
 }
@@ -169,7 +182,7 @@ span{
  margin: 0;
 }
 #blog a{
-    inline-block;
+    display: inline-block;
     margin-left: 20px;
 }
 #que-esperas{
@@ -211,7 +224,7 @@ span{
     }
     nav .lista{
         flex-direction: column;
-        display-flex;
+        display: flex;
     }
     .menu-icon {
         display: block;
